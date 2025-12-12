@@ -1,13 +1,11 @@
 import sys
 import framebuf
-import fontlib
 import gc9a01
 import time
 from machine import Pin,I2C,SPI
 import machine
 import math
 import gc
-import fontlib
 import random
 import neopixel
 
@@ -25,7 +23,6 @@ tft = gc9a01.GC9A01(
     rotation=0)
 bytebuffer = bytearray(screen_width * screen_height * 2) #two bytes for each pixel
 fbuf = framebuf.FrameBuffer(bytebuffer, screen_width, screen_height, framebuf.RGB565)
-IBM_font = fontlib.font("IBM BIOS (8,8).bmp") # Loads font to ram 
 
 # Define the pin for the WS2812 LED (GPIO8)
 led_pin = machine.Pin(18)
