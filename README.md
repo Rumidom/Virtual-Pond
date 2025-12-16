@@ -10,6 +10,8 @@ https://github.com/user-attachments/assets/1909afb5-b9cc-4a2d-9cbf-0fcb56dc8f52
 - [M3x10 Machine screws](https://s.click.aliexpress.com/e/_c326YRkh)
 - [Wires](https://s.click.aliexpress.com/e/_c40WljAV)
 - [Toggle Switch (Optional)](https://s.click.aliexpress.com/e/_c4Du71H7)
+- [Push Self-locking Switch(Optional)](https://s.click.aliexpress.com/e/_c4UvIqcv)
+- [Push Self-locking Switch(Optional)](https://s.click.aliexpress.com/e/_c2uXHJdf)
 - Lithium Battery (Optional)
   
 # Wiring diagram:  
