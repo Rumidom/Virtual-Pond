@@ -12,15 +12,13 @@ import neopixel
 screen_width = 240
 screen_height = 240
 
-#machine.freq(160000000)
+# Raspberry pi Pico PINS
+# spi = SPI(0, baudrate=60000000, sck=Pin(18), mosi=Pin(19))
+# tft = gc9a01.GC9A01(spi,dc=Pin(21, Pin.OUT),cs=Pin(17, Pin.OUT),reset=Pin(20, Pin.OUT),rotation=0)
+
+# ESP32 C6 PINS
 spi = SPI(1,baudrate=60000000, sck=Pin(7), mosi=Pin(6))
-tft = gc9a01.GC9A01(
-    spi,
-    dc=Pin(3, Pin.OUT),
-    cs=Pin(4, Pin.OUT),
-    reset=Pin(5, Pin.OUT),
-    #backlight=Pin(14, Pin.OUT),
-    rotation=0)
+tft = gc9a01.GC9A01(spi,dc=Pin(3, Pin.OUT),cs=Pin(4, Pin.OUT),reset=Pin(5, Pin.OUT),rotation=0)
 bytebuffer = bytearray(screen_width * screen_height * 2) #two bytes for each pixel
 fbuf = framebuf.FrameBuffer(bytebuffer, screen_width, screen_height, framebuf.RGB565)
 
@@ -125,7 +123,7 @@ class boid:
         if len(self.group) > 0:
             self.addToSpeed(gcNormal,mag)
                 
-    def repelToGroup(self,mag=20,dist_min=30):
+    def repelToGroup(self,mag=30,dist_min=30):
         if len(self.group) > 0:
             d = self.getDistance(self.gcenter)
             
@@ -134,7 +132,7 @@ class boid:
                 invgcNormal = (-gcNormal[0],-gcNormal[1])
                 self.addToSpeed(invgcNormal,mag/d)
                 
-    def alignToGroup(self,mag=0.2):
+    def alignToGroup(self,mag=0.3):
         if len(self.group) > 0:
             gheading = [0,0]
             for bd in self.group:
