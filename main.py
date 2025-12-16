@@ -215,12 +215,12 @@ while True:
         b.atractToGroup()
         b.repelToGroup()
         b.alignToGroup()
-        b.draw(fbuf)
         if b.getDistance(screenCenter) > 80:
             Ctnormal = b.getNormalToPnt(screenCenter)
             if b.dotNormalizedTo(screenCenter) < 0.8:
                 b.addToSpeed(Ctnormal,0.2+b.getDistance(screenCenter)/240)
         b.limitSpeed()
         b.move()
+        b.draw(fbuf)
     tft.blit_buffer(bytebuffer,0,0,screen_width,screen_height)
     
