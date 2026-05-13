@@ -1,7 +1,9 @@
 # Virtual Pond 
 A boids simulation written in micropython  
 
+<div align="center">
 https://github.com/user-attachments/assets/1909afb5-b9cc-4a2d-9cbf-0fcb56dc8f52
+</div>
 
 # USB Port Powered (ESP32-s3) [Recomended]
 
@@ -36,6 +38,7 @@ https://github.com/user-attachments/assets/1909afb5-b9cc-4a2d-9cbf-0fcb56dc8f52
 ![ESP32 C6 wiring](https://github.com/Rumidom/Virtual-Pond/blob/main/Images/Wiring_C6_battery_powered.jpg)
 
 # License and 3D printing Files
-The software on this repository is available for free under the MIT license, 3D printing files to build this zen garden are available for sale on cults3d:
+The software on this repository is available for free under the MIT license, 3D printing files to build this zen garden are available for sale on cults3d:  
+<div align="center">
 <img src="https://github.com/Rumidom/Virtual-Pond/blob/main/Images/Pond.jpg" width="500">
-
+</div>
