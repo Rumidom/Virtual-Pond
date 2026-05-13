@@ -12,22 +12,50 @@ import neopixel
 screen_width = 240
 screen_height = 240
 
-# Raspberry pi Pico PINS
+## Raspberry pi Pico PINS
 # spi = SPI(0, baudrate=60000000, sck=Pin(18), mosi=Pin(19))
 # tft = gc9a01.GC9A01(spi,dc=Pin(21, Pin.OUT),cs=Pin(17, Pin.OUT),reset=Pin(20, Pin.OUT),rotation=0)
+#led_pin = machine.Pin(18)
+#Power_button = Pin(3, Pin.IN, Pin.PULL_UP)
 
-# ESP32 C6 PINS
-spi = SPI(1,baudrate=60000000, sck=Pin(7), mosi=Pin(6))
-tft = gc9a01.GC9A01(spi,dc=Pin(3, Pin.OUT),cs=Pin(4, Pin.OUT),reset=Pin(5, Pin.OUT),rotation=0)
+### ESP32 C6 Wiring
+#spi = SPI(1,baudrate=60000000, sck=Pin(7), mosi=Pin(6))
+#tft = gc9a01.GC9A01(spi,dc=Pin(3, Pin.OUT),cs=Pin(4, Pin.OUT),reset=Pin(5, Pin.OUT),rotation=0)
+#led_pin = machine.Pin(18)
+#Power_button = Pin(8, Pin.IN, Pin.PULL_UP)
+
+## ESP32 S3 Wiring
+spi = SPI(1,baudrate=60000000, sck=Pin(5), mosi=Pin(6))
+tft = gc9a01.GC9A01(spi,dc=Pin(7, Pin.OUT),cs=Pin(8, Pin.OUT),reset=Pin(9, Pin.OUT),rotation=0)
+led_pin = machine.Pin(4)
+Power_button = Pin(3, Pin.IN, Pin.PULL_UP)
+
 bytebuffer = bytearray(screen_width * screen_height * 2) #two bytes for each pixel
 fbuf = framebuf.FrameBuffer(bytebuffer, screen_width, screen_height, framebuf.RGB565)
 
-# Define the pin for the WS2812 LED (GPIO8)
-led_pin = machine.Pin(18)
 # Define the number of NeoPixels (in this case, 1 for the onboard LED)
 num_pixels = 1
 # Create a NeoPixel object
 np = neopixel.NeoPixel(led_pin, num_pixels)
+
+
+
+
+def lampPowerON(lampstate):
+    if not lampstate:
+        for i in range(256):
+            np[0] = (i, int(i * 0.65), 0)
+            np.write()
+            time.sleep(0.01)
+    return True
+
+def lampPowerOFF(lampstate):
+    if lampstate:
+        for i in range(255, -1, -1):
+            np[0] = (i, int(i * 0.65), 0)
+            np.write()
+            time.sleep(0.01)
+    return False
 
 def color(tup):
     red, green, blue = tup
@@ -208,8 +236,16 @@ boidlist.append(boid(80,80,13,col=(227, 68, 39)))
 screenCenter = (120,120)
 np[0] = (241, 99, 35)
 np.write()
+LampState = False
+tft.fill(0)
 while True:
     fbuf.fill(0)
+    LampState = lampPowerON(LampState)
+    # waits for power button to be pressed
+    while not Power_button.value():
+        tft.fill(0)
+        LampState = lampPowerOFF(LampState)
+        
     for b in boidlist:
         b.setGroup(boidlist,dist = 50)
         b.atractToGroup()
