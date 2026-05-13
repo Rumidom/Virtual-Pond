@@ -1,9 +1,9 @@
-# Virtual Pond
+# Virtual Pond 
 A boids simulation written in micropython  
 
 https://github.com/user-attachments/assets/1909afb5-b9cc-4a2d-9cbf-0fcb56dc8f52
 
-# USB Port Powered (Recomended)
+# USB Port Powered (ESP32-s3) [Recomended]
 
 ## Part list: 
 
@@ -19,7 +19,7 @@ https://github.com/user-attachments/assets/1909afb5-b9cc-4a2d-9cbf-0fcb56dc8f52
 ## Wiring diagram:  
 ![ESP32-S3 Zero](https://github.com/Rumidom/Virtual-Pond/blob/main/Images/wiring.png)
 
-# Battery Powered Version(Battery Powered)
+# Battery Powered Version (ESP32-C6)
 
 ## Part list: 
 - [WS2812 RGB LED](https://s.click.aliexpress.com/e/_c4c2DYuN)  
