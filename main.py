@@ -38,9 +38,6 @@ num_pixels = 1
 # Create a NeoPixel object
 np = neopixel.NeoPixel(led_pin, num_pixels)
 
-
-
-
 def lampPowerON(lampstate):
     if not lampstate:
         for i in range(256):
