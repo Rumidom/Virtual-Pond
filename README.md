@@ -2,7 +2,7 @@
 A boids simulation written in micropython  
 
 <div align="center">
-https://github.com/user-attachments/assets/1909afb5-b9cc-4a2d-9cbf-0fcb56dc8f52
+<img src="https://github.com/Rumidom/Virtual-Pond/blob/main/videos/video-optimized.gif" width="300">
 </div>
 
 # USB Port Powered (ESP32-s3) [Recomended]
