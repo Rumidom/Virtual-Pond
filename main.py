@@ -231,8 +231,6 @@ boidlist.append(boid(130,130,13,col=(241, 99, 35)))
 boidlist.append(boid(100,100,13,col=(241, 99, 35)))
 boidlist.append(boid(80,80,13,col=(227, 68, 39)))
 screenCenter = (120,120)
-np[0] = (241, 99, 35)
-np.write()
 LampState = False
 tft.fill(0)
 while True:
