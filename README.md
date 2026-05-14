@@ -38,7 +38,7 @@ A micropython boids simulation
 ![ESP32 C6 wiring](https://github.com/Rumidom/Virtual-Pond/blob/main/Images/Wiring_C6_battery_powered.jpg)
 
 # License and 3D printing Files
-The software on this repository is available for free under the MIT license, 3D printing files to build this zen garden are available for sale on cults3d:  
+The software on this repository is available for free under the MIT license, 3D printing files to build this zen garden are available for sale on [cults3d](https://cults3d.com/en/3d-model/art/virtual-pond-zen-garden):  
 <div align="center">
 <img src="https://github.com/Rumidom/Virtual-Pond/blob/main/Images/Pond.jpg" width="500">
 </div>
