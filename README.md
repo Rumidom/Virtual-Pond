@@ -1,5 +1,5 @@
 # Virtual Pond 
-A boids simulation written in micropython  
+A micropython boids simulation
 
 <div align="center">
 <img src="https://github.com/Rumidom/Virtual-Pond/blob/main/videos/video-optimized.gif" width="300">
